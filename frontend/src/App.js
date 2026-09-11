@@ -261,7 +261,7 @@ useEffect(() => {
     setAiText("");
     fullExplanationRef.current = "";
     try {
-      const res = await axios.post("http://localhost:8000/api/scan", { text: textToScan, lang });
+      const res = await axios.post("https://phishguard-app-0mrx.onrender.com/api/scan", { text: textToScan, lang });
       const raw = res.data.explanation;
       const clean = (raw === undefined || raw === null)
         ? "Analysis complete."
