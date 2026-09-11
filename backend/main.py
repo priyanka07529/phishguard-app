@@ -135,13 +135,14 @@ Write 2-3 short sentences:
 Be warm and caring like a trusted family member."""
 
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",
             messages=[{"role": "user", "content": prompt}],
             max_tokens=200
         )
         return response.choices[0].message.content
 
     except Exception as e:
+        print(f"⚠️ AI explanation error: {e}")
         return f"Analysis complete. Please be careful with this message."
 
 @app.get("/")
